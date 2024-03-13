@@ -9,7 +9,7 @@ loader = WebBaseLoader("https://www.moel.go.kr/policy/policyinfo/support/list4.d
 
 load_dotenv()
 openai_api_key=os.getenv("OPENTI_API_KEY")
-llm=ChatOpenAI(openai_api_key=openai_api_key)
+llm=ChatOpenAI(openai_api_key=openai_api_key, model="gpt-4-0125-preview")
 prompt =ChatPromptTemplate.from_messages(
     [
         ("system", "너는 청년을 행복하게 하기 위한 정부정책 안내 컨설턴트야"),

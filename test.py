@@ -3,13 +3,10 @@ import os
 from openai import OpenAI
 from langchain_openai import ChatOpenAI
 
-from langchain_core.prompts import ChatPromptTemplate
 from langchain_community.document_loaders import WebBaseLoader
-loader = WebBaseLoader("https://www.moel.go.kr/policy/policyinfo/support/list4.do")
 
 load_dotenv()
 openai_api_key=os.getenv("OPENAI_API_KEY")
-llm=ChatOpenAI(openai_api_key=openai_api_key)
 
 # main.py
 from langchain.callbacks.base import BaseCallbackHandler
@@ -17,7 +14,7 @@ from langchain.chat_models import ChatOpenAI
 from langchain.schema import ChatMessage
 import streamlit as st
 API_KEY = os.getenv("OPENAI_API_KEY")
-MODEL = "gpt-3.5-turbo-0125"
+MODEL = "gpt-4-0125-preview"
 
 class StreamHandler(BaseCallbackHandler):
     def __init__(self, container, initial_text=""):
